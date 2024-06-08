@@ -16,7 +16,7 @@
 ### Oak Web
 - **Descrição**: Outra loja de aplicativos web
 - **Status**: Em desenvolvimento 
-- **Responsável**: [Agel SK](https://github.com/aglsk)
+- **Responsável**: [AGL SK](https://github.com/aglsk)
 
 ### [Oak Android](https://github.com/aglsk/InovaTech-Android)
 - **Descrição**: Bem, você já deve conhecer o InovaTech Web, certo? O InovaTech Android é a versão Android dele!
