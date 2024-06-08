@@ -26,5 +26,5 @@
 # Contribuidores:
 
 <a href="https://github.com/aglsk/InovaTech/graphs/contributors">
-  <img alt="gráfico de contribuidores" src="https://contrib.rocks/image?repo=aglsk/InovaTech" />
+  <img alt="gráfico de contribuidores" src="https://contrib.rocks/image?repo=aglsk/Oak-Web" />
 </a>
