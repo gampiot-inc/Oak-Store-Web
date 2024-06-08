@@ -17,8 +17,8 @@
 - **Status**: Em desenvolvimento 
 - **Responsável**: [AGL SK](https://github.com/aglsk)
 
-### [Oak Android](https://github.com/aglsk/InovaTech-Android)
-- **Descrição**: Bem, você já deve conhecer o InovaTech Web, certo? O InovaTech Android é a versão Android dele!
+### [Oak Android](https://github.com/aquilesTrindade/Oak-Android)
+- **Descrição**: Bem, você já deve conhecer o Oak Web, certo? O Oak Android é a versão Android dele!
 - **Status**: Em desenvolvimento 
 - **Responsável**: [Aquiles Trindade](https://github.com/aquilesTrindade)
 
