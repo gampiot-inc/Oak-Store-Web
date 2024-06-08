@@ -7,7 +7,6 @@
 
 - [Aquiles Trindade](https://github.com/aquilesTrindade)
 - [Agel SK](https://github.com/aglsk)
-- [Skinvent](https://github.com/skinvent)
 - [Suay Dev](https://github.com/devsuay)
 - E você em breve!
 
