@@ -1,29 +1,34 @@
 <div align="center">
-   Bem-vindo à página da Oak Store! 
-   Neste repositório, você encontrará todas as atualizações do Oak Web e Android!
+  <img width="20%" height="20%" src="https://avatars.githubusercontent.com/u/172158006?s=400&u=bd25903d55ecdd876355368dcc01d420ebd1ac2a&v=4" />
 </div>
 
-# Membros
+<div align="center">
+   Welcome to the Oak Store page!
+   In this repository you will find all Oak Web and Android updates!
+</div>
+
+
+# Members
 
 - [Aquiles Trindade](https://github.com/aquilesTrindade)
 - [Agel SK](https://github.com/aglsk)
 - [Suay Dev](https://github.com/devsuay)
-- E você em breve!
+- And you soon!
 
-# Projetos Oak
+# Oak Projects
 
-### Oak Web
-- **Descrição**: Outra loja de aplicativos web
-- **Status**: Em desenvolvimento 
-- **Responsável**: [AGL SK](https://github.com/aglsk)
+### [Oak Web](https://github.com/Oak-Store/Oak-Web)
+- **Description**: Another web app store
+- **Status**: In development
+- **Responsible**: [AGL SK](https://github.com/aglsk)
+<a href="https://github.com/Oak-Store/Oak-Web/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Oak-Store/Oak-Web" />
+</a>
 
-### [Oak Android](https://github.com/aquilesTrindade/Oak-Android)
-- **Descrição**: Bem, você já deve conhecer o Oak Web, certo? O Oak Android é a versão Android dele!
-- **Status**: Em desenvolvimento 
-- **Responsável**: [Aquiles Trindade](https://github.com/aquilesTrindade)
-
-# Contribuidores:
-
-<a href="https://github.com/aglsk/Oak-Web/graphs/contributors">
-  <img alt="gráfico de contribuidores" src="https://contrib.rocks/image?repo=aglsk/Oak-Web" />
+### [Oak Android](https://github.com/Oak-Store/Oak-Android)
+- **Description**: Well, you may already know Oak Web, right? Oak Android is the Android version of it!
+- **Status**: In slow development...
+- **Responsible**: [Aquiles Trindade](https://github.com/aquilesTrindade)
+<a href="https://github.com/Oak-Store/Oak-Android/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Oak-Store/Oak-Android" />
 </a>
