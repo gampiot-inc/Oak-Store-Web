@@ -2,7 +2,7 @@
 <html class="mdui-theme-dark" style="font-family: 'Gilroy-Regular', sans-serif;">
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Oak Store - Web</title>
+  <title>Oak Web</title>
   <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
   <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
   <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
@@ -33,10 +33,12 @@
       cursor: pointer;
     }
   </style>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <header>
   <mdui-top-app-bar style="position: relative;">
-    <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store - Web</mdui-top-app-bar-title>
+    <mdui-button-icon icon="menu" mdui-drawer="{target: '#drawer', swipe: true}"></mdui-button-icon>
+    <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</mdui-top-app-bar-title>
     <div style="flex-grow: 1"></div>
     <mdui-button-icon icon="more_vert"></mdui-button-icon>
     <!-- Botões de alternância de tema, GitHub e tradução -->
@@ -47,10 +49,31 @@
     </div>
   </mdui-top-app-bar>
 </header>
+
+<!-- Drawer Menu -->
+<div class="mdui-drawer" id="drawer">
+  <ul class="mdui-list">
+    <li class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+      <div class="mdui-list-item-content">Home</div>
+    </li>
+    <li class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+      <div class="mdui-list-item-content">About</div>
+    </li>
+    <li class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons">contact_mail</i>
+      <div class="mdui-list-item-content">Contact</div>
+    </li>
+  </ul>
+</div>
+
 <body>
-  <h1>
-    A Loja de Aplicativo Para Android
-  </h1>
+  <h1>The Free OSS Android App Store</h1>
+  <mdui-button>Coming Soon!!!</mdui-button>
+
+  <div id="google_translate_element" style="display: none;"></div>
+
   <script>
     // JavaScript para alternar o tema
     const toggleButton = document.getElementById('themeToggleButton');
@@ -64,10 +87,25 @@
       window.open('https://github.com/Oak-Store/Oak-Web', '_blank');
     });
 
-    // JavaScript para traduzir a página (usando Google Translate)
+    // JavaScript para inicializar o Google Translate
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+
+    // JavaScript para abrir o tradutor dentro da página
     const translateButton = document.getElementById('translateButton');
     translateButton.addEventListener('click', () => {
-      window.open('https://translate.google.com/', '_blank');
+      const translateElement = document.getElementById('google_translate_element');
+      if (translateElement.style.display === 'none') {
+        translateElement.style.display = 'block';
+      } else {
+        translateElement.style.display = 'none';
+      }
+    });
+
+    // Inicializa o MDUI Drawer
+    document.addEventListener('DOMContentLoaded', function() {
+      const drawer = new mdui.Drawer('#drawer');
     });
   </script>
 </body>
