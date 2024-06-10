@@ -34,27 +34,44 @@
     }
   </style>
 </head>
-<header>
-  <mdui-top-app-bar style="position: relative;">
-    <mdui-button-icon icon="menu"></mdui-button-icon>
-    <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</mdui-top-app-bar-title>
-    <div style="flex-grow: 1"></div>
-    <mdui-button-icon icon="more_vert"></mdui-button-icon>
-    <!-- Botões de alternância de tema, GitHub e tradução -->
-    <div class="icon-buttons">
-      <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
-      <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
-      <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
-    </div>
-  </mdui-top-app-bar>
-</header>
 <body>
-  <h1>
-    The Free OSS Android App Store
-  </h1>
-  <mdui-button>
-    Coming Soon!!!
-  </mdui-button>
+  <header>
+    <mdui-appbar>
+      <mdui-toolbar>
+        <mdui-button mdui-drawer="{target: '#drawer', swipe: true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></mdui-button>
+        <span class="mdui-typo-title" style="flex-grow: 1; text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</span>
+        <div class="icon-buttons">
+          <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
+          <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
+          <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
+        </div>
+      </mdui-toolbar>
+    </mdui-appbar>
+  </header>
+
+  <!-- Drawer Menu -->
+  <div class="mdui-drawer" id="drawer">
+    <ul class="mdui-list">
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+        <div class="mdui-list-item-content">Home</div>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
+        <div class="mdui-list-item-content">About</div>
+      </li>
+      <li class="mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">contact_mail</i>
+        <div class="mdui-list-item-content">Contact</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="mdui-container">
+    <h1>The Free OSS Android App Store</h1>
+    <mdui-button>Coming Soon!!!</mdui-button>
+  </div>
+
   <script>
     // JavaScript para alternar o tema
     const toggleButton = document.getElementById('themeToggleButton');
@@ -72,6 +89,11 @@
     const translateButton = document.getElementById('translateButton');
     translateButton.addEventListener('click', () => {
       window.open('https://translate.google.com/', '_blank');
+    });
+
+    // Inicializa o MDUI Drawer
+    document.addEventListener('DOMContentLoaded', function() {
+      const drawer = new mdui.Drawer('#drawer');
     });
   </script>
 </body>
