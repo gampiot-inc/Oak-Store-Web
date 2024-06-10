@@ -19,11 +19,15 @@
   <!-- app styles -->
   <link href="../css/styles.css" rel="stylesheet">
   <style>
-    /* Estilos adicionais para o botão de alternância */
-    .theme-toggle-button {
+    /* Estilos adicionais para os botões */
+    .icon-buttons {
       position: absolute;
       right: 16px;
       top: 16px;
+      display: flex;
+      gap: 10px;
+    }
+    .icon-button {
       cursor: pointer;
     }
   </style>
@@ -34,8 +38,12 @@
     <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</mdui-top-app-bar-title>
     <div style="flex-grow: 1"></div>
     <mdui-button-icon icon="more_vert"></mdui-button-icon>
-    <!-- Botão de alternância de tema -->
-    <mdui-button-icon class="theme-toggle-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
+    <!-- Botões de alternância de tema, GitHub e tradução -->
+    <div class="icon-buttons">
+      <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
+      <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
+      <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
+    </div>
   </mdui-top-app-bar>
 </header>
 <body>
@@ -50,6 +58,18 @@
     const toggleButton = document.getElementById('themeToggleButton');
     toggleButton.addEventListener('click', () => {
       document.documentElement.classList.toggle('mdui-theme-dark');
+    });
+
+    // JavaScript para abrir o GitHub
+    const githubButton = document.getElementById('githubButton');
+    githubButton.addEventListener('click', () => {
+      window.open('https://github.com/', '_blank');
+    });
+
+    // JavaScript para traduzir a página (usando Google Translate)
+    const translateButton = document.getElementById('translateButton');
+    translateButton.addEventListener('click', () => {
+      window.open('https://translate.google.com/', '_blank');
     });
   </script>
 </body>
