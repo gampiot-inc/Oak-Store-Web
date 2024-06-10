@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="mdui-theme-dark" style="font-family: 'Gilroy-Regular', sans-serif;">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Oak Web</title>
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+  <!-- Filled -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Outlined -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <!-- Rounded -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- Sharp -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+  <!-- Two Tone -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+  <!-- app styles -->
+  <link href="../css/styles.css" rel="stylesheet">
+  <style>
+    /* Estilos adicionais para o botão de alternância */
+    .theme-toggle-button {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<header>
+  <mdui-top-app-bar style="position: relative;">
+    <mdui-button-icon icon="menu"></mdui-button-icon>
+    <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <mdui-button-icon icon="more_vert"></mdui-button-icon>
+    <!-- Botão de alternância de tema -->
+    <mdui-button-icon class="theme-toggle-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
+  </mdui-top-app-bar>
+</header>
+<body>
+  <h1>
+    The Free OSS Android App Store
+  </h1>
+  <mdui-button>
+    Coming Soon!!!
+  </mdui-button>
+  <script>
+    // JavaScript para alternar o tema
+    const toggleButton = document.getElementById('themeToggleButton');
+    toggleButton.addEventListener('click', () => {
+      document.documentElement.classList.toggle('mdui-theme-dark');
+    });
+  </script>
+</body>
+</html>
