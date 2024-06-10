@@ -30,6 +30,10 @@
     .icon-button {
       cursor: pointer;
     }
+    .icon-button img {
+      width: 24px;
+      height: 24px;
+    }
   </style>
 </head>
 <header>
@@ -41,7 +45,9 @@
     <!-- Botões de alternância de tema, GitHub e tradução -->
     <div class="icon-buttons">
       <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
-      <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
+      <a class="icon-button" id="githubButton" href="https://github.com/" target="_blank">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+      </a>
       <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
     </div>
   </mdui-top-app-bar>
@@ -60,13 +66,7 @@
       document.documentElement.classList.toggle('mdui-theme-dark');
     });
 
-    // JavaScript para abrir o GitHub
-    const githubButton = document.getElementById('githubButton');
-    githubButton.addEventListener('click', () => {
-      window.open('https://github.com/', '_blank');
-    });
-
-    // JavaScript para traduzir a página (usando Google Translate)
+    // JavaScript para abrir a tradução (usando Google Translate)
     const translateButton = document.getElementById('translateButton');
     translateButton.addEventListener('click', () => {
       window.open('https://translate.google.com/', '_blank');
