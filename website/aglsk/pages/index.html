@@ -37,10 +37,8 @@
 </head>
 <header>
   <mdui-top-app-bar style="position: relative;">
-    <mdui-button-icon icon="menu" mdui-drawer="{target: '#drawer', swipe: true}"></mdui-button-icon>
     <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</mdui-top-app-bar-title>
     <div style="flex-grow: 1"></div>
-    <mdui-button-icon icon="more_vert"></mdui-button-icon>
     <!-- Botões de alternância de tema, GitHub e tradução -->
     <div class="icon-buttons">
       <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
@@ -49,24 +47,6 @@
     </div>
   </mdui-top-app-bar>
 </header>
-
-<!-- Drawer Menu -->
-<div class="mdui-drawer" id="drawer">
-  <ul class="mdui-list">
-    <li class="mdui-list-item mdui-ripple">
-      <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-      <div class="mdui-list-item-content">Home</div>
-    </li>
-    <li class="mdui-list-item mdui-ripple">
-      <i class="mdui-list-item-icon mdui-icon material-icons">info</i>
-      <div class="mdui-list-item-content">About</div>
-    </li>
-    <li class="mdui-list-item mdui-ripple">
-      <i class="mdui-list-item-icon mdui-icon material-icons">contact_mail</i>
-      <div class="mdui-list-item-content">Contact</div>
-    </li>
-  </ul>
-</div>
 
 <body>
   <h1>The Free OSS Android App Store</h1>
@@ -101,11 +81,6 @@
       } else {
         translateElement.style.display = 'none';
       }
-    });
-
-    // Inicializa o MDUI Drawer
-    document.addEventListener('DOMContentLoaded', function() {
-      const drawer = new mdui.Drawer('#drawer');
     });
   </script>
 </body>
