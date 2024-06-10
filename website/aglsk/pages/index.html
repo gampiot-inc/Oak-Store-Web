@@ -23,9 +23,6 @@
   <style>
     /* Estilos adicionais para os botões */
     .icon-buttons {
-      position: absolute;
-      right: 16px;
-      top: 16px;
       display: flex;
       gap: 10px;
     }
@@ -34,20 +31,18 @@
     }
   </style>
 </head>
-<body>
-  <header>
-    <mdui-appbar>
-      <mdui-toolbar>
-        <mdui-button mdui-drawer="{target: '#drawer', swipe: true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></mdui-button>
-        <span class="mdui-typo-title" style="flex-grow: 1; text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</span>
-        <div class="icon-buttons">
-          <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
-          <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
-          <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
-        </div>
-      </mdui-toolbar>
-    </mdui-appbar>
-  </header>
+<header>
+  <mdui-appbar>
+    <mdui-toolbar>
+      <mdui-button mdui-drawer="{target: '#drawer', swipe: true}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></mdui-button>
+      <span class="mdui-typo-title" style="text-align: center; font-family: 'Gilroy-Bold', sans-serif; flex-grow: 1;">Oak Store</span>
+      <div class="icon-buttons">
+        <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
+        <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
+        <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
+      </div>
+    </mdui-toolbar>
+  </mdui-appbar>
 
   <!-- Drawer Menu -->
   <div class="mdui-drawer" id="drawer">
@@ -66,7 +61,8 @@
       </li>
     </ul>
   </div>
-
+</header>
+<body>
   <div class="mdui-container">
     <h1>The Free OSS Android App Store</h1>
     <mdui-button>Coming Soon!!!</mdui-button>
