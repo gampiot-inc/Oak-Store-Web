@@ -32,3 +32,8 @@
 <a href="https://github.com/Oak-Store/Oak-Android/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Oak-Store/Oak-Android" />
 </a>
+
+
+# Contributing 
+
+[Information to contribute](https://github.com/Oak-Store/Oak-Web/tree/main/CONTRIBUTING.md)
