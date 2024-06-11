@@ -33,6 +33,7 @@
       cursor: pointer;
     }
   </style>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <header>
   <mdui-top-app-bar style="position: relative;">
@@ -51,6 +52,8 @@
   <h1>The Free OSS Android App Store</h1>
   <mdui-button>Coming Soon!!!</mdui-button>
 
+  <div id="google_translate_element" style="display: none;"></div>
+
   <script>
     // JavaScript para alternar o tema
     const toggleButton = document.getElementById('themeToggleButton');
@@ -64,10 +67,24 @@
       window.open('https://github.com/Oak-Store/Oak-Web', '_blank');
     });
 
-    // JavaScript para orientar o uso do tradutor do navegador
+    // JavaScript para inicializar o Google Translate
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+
+    // JavaScript para abrir o tradutor dentro da página e traduzir para português
     const translateButton = document.getElementById('translateButton');
     translateButton.addEventListener('click', () => {
-      alert('Para traduzir esta página, use a funcionalidade de tradução do seu navegador.');
+      const translateElement = document.getElementById('google_translate_element');
+      if (translateElement.style.display === 'none') {
+        translateElement.style.display = 'block';
+        setTimeout(() => {
+          document.querySelector('.goog-te-combo').value = 'pt';
+          document.querySelector('.goog-te-combo').dispatchEvent(new Event('change'));
+        }, 100);
+      } else {
+        translateElement.style.display = 'none';
+      }
     });
   </script>
 </body>
