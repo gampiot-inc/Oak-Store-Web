@@ -59,6 +59,7 @@
     <div class="icon-buttons">
       <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
       <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
+      <mdui-button-icon class="icon-button" id="devButton" icon="developer_mode"></mdui-button-icon>
       <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
     </div>
   </mdui-top-app-bar>
@@ -78,6 +79,12 @@
     const githubButton = document.getElementById('githubButton');
     githubButton.addEventListener('click', () => {
       window.open('https://github.com/Oak-Store/Oak-Web', '_blank');
+    });
+
+    // JavaScript para abrir a página de desenvolvedores
+    const devButton = document.getElementById('devButton');
+    devButton.addEventListener('click', () => {
+      window.open('https://github.com/Oak-Store', '_blank'); // Atualize a URL para a página de desenvolvedores específica, se houver.
     });
 
     // JavaScript para inicializar o Google Translate
