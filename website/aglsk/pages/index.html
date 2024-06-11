@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
   <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
   <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+  <!--Adicional-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
   <!-- Filled -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Outlined -->
@@ -86,8 +90,26 @@
 
 <body class="mdui-scrollbar">
   <h1>Welcome to Oak Web</h1>
-  <h2>Categories:</h2>
-  <ul id="postagem"></ul>
+  <div class="mdui-tab mdui-tab-full-width" id="categoriesTabs">
+    <a href="#newApps" class="mdui-ripple">New Apps</a>
+    <a href="#editorsChoice" class="mdui-ripple">Editor's Choice</a>
+    <a href="#recent" class="mdui-ripple">Recent</a>
+  </div>
+
+  <div id="newApps" class="mdui-container">
+    <h2>New Apps</h2>
+    <ul id="newAppsList"></ul>
+  </div>
+
+  <div id="editorsChoice" class="mdui-container">
+    <h2>Editor's Choice</h2>
+    <ul id="editorsChoiceList"></ul>
+  </div>
+
+  <div id="recent" class="mdui-container">
+    <h2>Recent</h2>
+    <ul id="recentList"></ul>
+  </div>
 
   <script>
     $(document).ready(function() {
@@ -97,12 +119,24 @@
     });
 
     function displayApps(apps) {
-      var appsList = document.getElementById('postagem');
+      var newAppsList = document.getElementById('newAppsList');
+      var editorsChoiceList = document.getElementById('editorsChoiceList');
+      var recentList = document.getElementById('recentList');
+
       apps.forEach(function(app) {
         var li = document.createElement('li');
         li.textContent = app.name_app;
-        appsList.appendChild(li);
+
+        if (app.category === 'New Apps') {
+          newAppsList.appendChild(li);
+        } else if (app.category === "Editor's Choice") {
+          editorsChoiceList.appendChild(li);
+        } else if (app.category === 'Recent') {
+          recentList.appendChild(li);
+        }
       });
+
+      new mdui.Tab('#categoriesTabs');
     }
   </script>
   
