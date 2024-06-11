@@ -2,7 +2,7 @@
 <html class="mdui-theme-primary-purple mdui-theme-accent-purple mdui-theme-dark" style="font-family: 'Gilroy-Regular', sans-serif;">
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag para responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oak Web</title>
   <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
   <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
@@ -24,11 +24,11 @@
   <style>
     /* Estilos adicionais para os botões */
     .icon-buttons {
+      display: flex;
+      gap: 10px;
       position: absolute;
       right: 16px;
       top: 16px;
-      display: flex;
-      gap: 10px;
     }
     .icon-button {
       cursor: pointer;
@@ -49,18 +49,20 @@
       border: 3px solid #1e1e1e; /* Espaço ao redor do polegar */
     }
 
-    /* Estilos para tornar o layout responsivo */
+    /* Estilos responsivos */
     @media (max-width: 600px) {
       .icon-buttons {
-        right: 8px;
-        top: 8px;
-        gap: 5px;
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
       }
       .mdui-top-app-bar-title {
-        font-size: 20px;
+        text-align: center;
+        font-size: 18px;
       }
       h1 {
         font-size: 24px;
+        text-align: center;
       }
     }
   </style>
@@ -68,33 +70,21 @@
 </head>
 <header>
   <div id="google_translate_element" style="display: none;"></div>
-  <mdui-appbar>
-    <mdui-toolbar>
-      <span class="mdui-typo-title" style="font-family: 'Gilroy-Bold', sans-serif;">Oak Store</span>
-      <div class="mdui-toolbar-spacer"></div>
-      <!-- Botões de alternância de tema, GitHub e tradução -->
-      <div class="icon-buttons">
-        <mdui-icon-button class="icon-button" id="themeToggleButton" mdui-tooltip="{content: 'Toggle Theme'}">
-          <i class="mdui-icon material-icons">brightness_6</i>
-        </mdui-icon-button>
-        <mdui-icon-button class="icon-button" id="githubButton" mdui-tooltip="{content: 'GitHub'}">
-          <i class="mdui-icon material-icons">code</i>
-        </mdui-icon-button>
-        <mdui-icon-button class="icon-button" id="devButton" mdui-tooltip="{content: 'Developers'}">
-          <i class="mdui-icon material-icons">developer_mode</i>
-        </mdui-icon-button>
-        <mdui-icon-button class="icon-button" id="translateButton" mdui-tooltip="{content: 'Translate'}">
-          <i class="mdui-icon material-icons">translate</i>
-        </mdui-icon-button>
-      </div>
-    </mdui-toolbar>
-  </mdui-appbar>
+  <mdui-top-app-bar style="position: relative;">
+    <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</mdui-top-app-bar-title>
+    <div style="flex-grow: 1"></div>
+    <!-- Botões de alternância de tema, GitHub e tradução -->
+    <div class="icon-buttons">
+      <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
+      <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
+      <mdui-button-icon class="icon-button" id="devButton" icon="developer_mode"></mdui-button-icon>
+      <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
+    </div>
+  </mdui-top-app-bar>
 </header>
 
 <body class="mdui-scrollbar">
-  <div class="mdui-container">
-    <h1>Welcome to Oak Web</h1>
-  </div>
+  <h1>Welcome to Oak Web</h1>
 
   <script>
     // JavaScript para alternar o tema
