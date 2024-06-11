@@ -66,6 +66,7 @@
       }
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <header>
@@ -86,12 +87,25 @@
 <body class="mdui-scrollbar">
   <h1>Welcome to Oak Web</h1>
   <h2>Categories:</h2>
-  <ul>
-    <li>New Apps</li>
-    <li>Editor's Choice</li>
-    <li>Recent</li>
-  </ul>
+  <ul id="postagem"></ul>
 
+  <script>
+    $(document).ready(function() {
+      $.get('https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec', function(data) {
+        displayApps(data);
+      });
+    });
+
+    function displayApps(apps) {
+      var appsList = document.getElementById('postagem');
+      apps.forEach(function(app) {
+        var li = document.createElement('li');
+        li.textContent = app.name_app;
+        appsList.appendChild(li);
+      });
+    }
+  </script>
+  
   <script>
     // JavaScript para alternar o tema
     const toggleButton = document.getElementById('themeToggleButton');
