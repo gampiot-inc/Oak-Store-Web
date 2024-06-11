@@ -1,0 +1,108 @@
+  <!DOCTYPE html>
+<html class="mdui-theme-dark" style="font-family: 'Gilroy-Regular', sans-serif;">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Oak Web</title>
+ <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+<script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+<link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+<!-- Filled -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Outlined -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+<!-- Rounded -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+<!-- Sharp -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+<!-- Two Tone -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+<!--Styling-->
+
+<style>
+
+</style>
+</head>
+<header>
+  <mdui-top-app-bar style="position: relative;">
+  <mdui-button-icon icon="menu"></mdui-button-icon>
+  <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold' , sans-serif;">Oak Store</mdui-top-app-bar-title>
+  <div style="flex-grow: 1"></div>
+    <mdui-dropdown  stay-open-on-click>
+  <mdui-button-icon icon="more_vert"slot="trigger" ></mdui-button-icon>
+      <mdui-menu>
+    <mdui-menu-item id="devButton">Oak Github</mdui-menu-item>
+    <mdui-menu-item id="repoButton">RepoOakWeb</mdui-menu-item>
+        <script>
+          // JavaScript For going to github organization of developers
+    const devButton = document.getElementById('devButton');
+    devButton.addEventListener('click', () => {
+      window.open('https://github.com/Oak-Store', '_blank'); // Atualize a URL para a página de desenvolvedores específica, se houver.
+    });
+         // JavaScript Code to Go to GitHub repository
+    const githubButton = document.getElementById('repoButton');
+    githubButton.addEventListener('click', () => {
+      window.open('https://github.com/Oak-Store/Oak-Web', '_blank');
+    });
+        
+        
+        
+        </script>
+        <mdui-dialog class="lang-dialog">
+          <mdui-list>
+  <mdui-list-subheader>Language</mdui-list-subheader>
+  <mdui-list-item onclick="window.open('/en/index.html')" rounded  style="margin-bottom: 6px;">Anglais</mdui-list-item>
+  <mdui-list-item onclick="window.open('/fr/index.html')" rounded active style="margin-bottom: 6px;">Français</mdui-list-item>
+  <mdui-list-item onclick="window.open('/pt/index.html')" rounded style="margin-bottom: 6px;">Portugual</mdui-list-item>
+  <mdui-list-item onclick="window.open('/es/index.html')" rounded style="margin-bottom: 6px;">Espagnol</mdui-list-item> 
+            <div style="text-align: end; margin-top:20px;">
+            <mdui-button variant="text">Fermer</mdui-button>
+            </div>
+</mdui-list>
+          
+        </mdui-dialog>
+        
+    <mdui-menu-item>Language</mdui-menu-item>
+        <script>
+  const dialog = document.querySelector(".lang-dialog");
+  const openButton = dialog.nextElementSibling;
+  const closeButton = dialog.querySelector("mdui-button");
+
+  openButton.addEventListener("click", () => dialog.open = true);
+  closeButton.addEventListener("click", () => dialog.open = false);
+</script>
+  </mdui-menu>
+</mdui-dropdown>
+</mdui-top-app-bar>
+  
+  
+</header>
+<body>
+  <h1>
+Le Open source Gratuit Boutique d'applications Android 
+  </h1>
+  <mdui-button>
+    À venir!!! 
+  </mdui-button>
+</body>
+<mdui-fab icon="brightness_6" 
+  id="themeToggleButton"
+  style="
+    margin: 0px;
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+    left: auto;
+    position: fixed;
+  "
+  ></mdui-fab>
+<script>
+  // JavaScript Code for Switching themes
+    const toggleButton = document.getElementById('themeToggleButton');
+    toggleButton.addEventListener('click', () => {
+      document.documentElement.classList.toggle('mdui-theme-dark');
+    });
+</script>
+</html>
