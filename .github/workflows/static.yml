@@ -34,14 +34,11 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         
-      - name: Send APK to Oak CI Group Telegram
-        if: success()
+      - name: send telegram message on push
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          disable_web_page_preview: false
           message: |
             *Atualização na  *Oak Store Web!*
             Repository: *${{ github.repository }}*
