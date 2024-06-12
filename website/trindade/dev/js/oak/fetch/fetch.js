@@ -9,8 +9,8 @@ fetch(API_URL)
     return response.json();
   })
   .then(data => {
-    data.forEach(appData => {
-      const html = appItem(appData.name_app, appData.dev_name, appData.photo_app, appData.id);
+    data.forEach(data => {
+      const html = appItem(data.project_name, data.project_dev_name, data.project_photo, data.project_id);
       appsContainer.appendChild(html);
     });
   })
