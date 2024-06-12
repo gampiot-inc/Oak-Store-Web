@@ -1,41 +1,65 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec";
-
 const appsContainer = document.querySelector("#apps_container");
 
 fetch(API_URL)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Error to get data');
-        }
-        return response.json();
-    })
-    .then(data => {
-        data.forEach(appData => {
-            const html = appItem(appData.name_app, appData.dev_name, appData.photo_app);
-            appsContainer.innerHTML += html;
-        });
-    })
-    .catch(error => {
-        console.error('Error: ', error);
-        const html = errorCase(error)
-        appsContainer.innerHTML += html;
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Erro ao obter dados');
+    }
+    return response.json();
+  })
+  .then(data => {
+    data.forEach(appData => {
+      const html = appItem(appData.name_app, appData.dev_name, appData.photo_app, appData.id);
+      appsContainer.appendChild(html);
     });
+  })
+  .catch(error => {
+    console.error('Erro: ', error);
+    const html = errorCase(error);
+    appsContainer.appendChild(html);
+  });
 
-function appItem(appname, dev, photo) {
-    return `
-        <div class="list-item mdui-list-item" rounded style="margin-bottom: 6px;" >
-            <img width="20%" height="20%" src="${photo}" alt="icon" class="logo">
-            <div class="info">
-                <div class="app-name">${appname}</div>
-                <div class="dev-name">${dev}</div>
-            </div>
-        </div>
-    `;
+function appItem(appname, dev, photo, id) {
+  const div = document.createElement('div');
+  div.classList.add('list-item', 'mdui-list-item');
+  div.addEventListener('click', () => detailsApp(id)); // Adiciona o evento de clique de forma segura
+
+  const img = document.createElement('img');
+  img.width = 20;
+  img.height = 20;
+  img.src = photo;
+  img.alt = 'icon';
+  img.classList.add('logo');
+
+  const infoDiv = document.createElement('div');
+  infoDiv.classList.add('info');
+
+  const appNameDiv = document.createElement('div');
+  appNameDiv.classList.add('app-name');
+  appNameDiv.textContent = appname;
+
+  const devNameDiv = document.createElement('div');
+  devNameDiv.classList.add('dev-name');
+  devNameDiv.textContent = dev;
+
+  infoDiv.appendChild(appNameDiv);
+  infoDiv.appendChild(devNameDiv);
+  div.appendChild(img);
+  div.appendChild(infoDiv);
+
+  return div;
 }
 
 function errorCase(error) {
-  return `
-  <div class="error">
-     <p class="error-text"> ${error} </p>
-  </div>`;
+  const div = document.createElement('div');
+  div.classList.add('error');
+
+  const p = document.createElement('p');
+  p.classList.add('error-text');
+  p.textContent = error.message;
+
+  div.appendChild(p);
+
+  return div;
 }
