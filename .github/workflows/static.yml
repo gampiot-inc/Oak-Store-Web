@@ -21,9 +21,16 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      WEB_ENV_FILE: ${{ secrets.WEB_ENV_FILE }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
+      - name: Create env.js
+        run: echo "$WEB_ENV_FILE" > website/trindade/dev/js/env.js
+          
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
