@@ -23,7 +23,7 @@ fetch(API_URL)
 function appItem(appname, dev, photo, id) {
   const div = document.createElement('div');
   div.classList.add('list-item', 'mdui-list-item');
-  div.addEventListener('click', () => detailsApp(id)); // Adiciona o evento de clique de forma segura
+  div.addEventListener('click', () => detailsApp(appname, dev)); // Adiciona o evento de clique de forma segura
 
   const img = document.createElement('img');
   img.width = 20;

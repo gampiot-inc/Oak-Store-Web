@@ -1,11 +1,13 @@
-var downloadLink = ""
+var DOWNLOAD_URL= ""
 
 async function fetchData() {
   const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  if (id) {
+  const project_name = urlParams.get('project_name');
+  const project_dev_name = urlParams.get('project_dev_name');
+  if (project_name) {
+    if (project_dev_name) {
     try {
-      const response = await fetch(`https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec?id=${id}`);
+      const response = await fetch(`https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec?project_name=${project_name}/?project_dev_name=${project_dev_name}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -23,7 +25,7 @@ async function fetchData() {
       document.getElementById('number_of_downloads').textContent = data['project_download_count'];
       document.getElementById('app_logo').src = data['project_photo'];
       document.getElementById('dev_photo').src = data['project_dev_photo'];
-      downloadLink = data['project_download_url'];
+      DOWNLOAD_URL = data['project_download_url'];
 
       const features = data['project_functions'] ? data['project_functions'].split(','): [];
       const featuresList = document.getElementById('app-features');
@@ -51,13 +53,16 @@ async function fetchData() {
       console.error('Fetch error: ', error);
       document.getElementById('app-detail').innerHTML = `<p>Erro ao carregar os dados: ${error.message}</p>`;
     }
+    } else {
+        document.getElementById('app-detail').innerHTML = '<p>Desenvolvedor do aplicativo não fornecido na URL.</p>';
+    }
   } else {
-    document.getElementById('app-detail').innerHTML = '<p>ID do aplicativo não fornecido na URL.</p>';
+    document.getElementById('app-detail').innerHTML = '<p>Nome do aplicativo não fornecido na URL.</p>';
   }
 }
 
 function openDownloadLink () {
-  window.location.href = downloadLink
+  window.location.href = DOWNLOAD_URL
 }
 
 fetchData()
