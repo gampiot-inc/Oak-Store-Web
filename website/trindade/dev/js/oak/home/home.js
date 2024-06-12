@@ -1,4 +1,4 @@
-const url = 'https://oak-store.github.io/Oak-Web/aglsk'
+const url = '../../../../../aglsk'
 
 function detailsApp(id) {
   open(url + `/?id=${id}`);

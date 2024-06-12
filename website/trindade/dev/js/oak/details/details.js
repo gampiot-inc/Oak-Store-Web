@@ -1,5 +1,5 @@
 
-const downloadLink = ""
+var downloadLink = ""
 
 async function fetchData() {
   const urlParams = new URLSearchParams(window.location.search);
