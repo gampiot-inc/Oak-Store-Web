@@ -1,4 +1,5 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec";
+import API_URL;
+
 const appsContainer = document.querySelector("#apps_container");
 
 fetch(API_URL)
