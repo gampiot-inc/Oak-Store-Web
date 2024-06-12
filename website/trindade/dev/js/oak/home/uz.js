@@ -9,4 +9,4 @@ const url = './website/aglsk/?id=';
 function open(uri) {
    window.location.href = uri;
 }
-open(baseUrl + id);
+open(baseUrl + window.appID);
