@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="mdui-theme-dark" style="font-family: 'Noto Sans Arabic', sans-serif;">
+<html style="font-family: 'Noto Sans Arabic', sans-serif;">
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,11 +64,11 @@ html {
         <mdui-dialog class="lang-dialog">
           <mdui-list>
   <mdui-list-subheader>اللغة</mdui-list-subheader>
-  <mdui-list-item onclick="window.open('/ar/index.html')" rounded active style="margin-bottom: 6px;">العربية</mdui-list-item>
-  <mdui-list-item onclick="window.open('/en/index.html')" rounded  style="margin-bottom: 6px;">الإنجليزية</mdui-list-item>
-  <mdui-list-item onclick="window.open('/fr/index.html')" rounded style="margin-bottom: 6px;">الفرنسية</mdui-list-item>
-  <mdui-list-item onclick="window.open('/pt/index.html')" rounded style="margin-bottom: 6px;">البرتغالية</mdui-list-item>
-  <mdui-list-item onclick="window.open('/es/index.html')" rounded style="margin-bottom: 6px;">الإسبانية</mdui-list-item> 
+  <mdui-list-item onclick="window.open('../ar/index.html')" rounded active style="margin-bottom: 6px;">العربية</mdui-list-item>
+  <mdui-list-item onclick="window.open('../en/index.html')" rounded  style="margin-bottom: 6px;">الإنجليزية</mdui-list-item>
+  <mdui-list-item onclick="window.open('../fr/index.html')" rounded style="margin-bottom: 6px;">الفرنسية</mdui-list-item>
+  <mdui-list-item onclick="window.open('../pt/index.html')" rounded style="margin-bottom: 6px;">البرتغالية</mdui-list-item>
+  <mdui-list-item onclick="window.open('../es/index.html')" rounded style="margin-bottom: 6px;">الإسبانية</mdui-list-item> 
             <div style="text-align: end; margin-top:20px;">
             <mdui-button variant="text">إغلاق</mdui-button>
             </div>
@@ -104,17 +104,6 @@ html {
   
   </div>
 </body>
-<mdui-fab icon="brightness_6" 
-  id="themeToggleButton"
-  style="
-    margin: 0px;
-    top: auto;
-    right: 20px;
-    bottom: 20px;
-    left: auto;
-    position: fixed;
-  "
-  ></mdui-fab>
 <script>
   // JavaScript Code for Switching themes
     const toggleButton = document.getElementById('themeToggleButton');
@@ -122,5 +111,7 @@ html {
       document.documentElement.classList.toggle('mdui-theme-dark');
     });
 </script>
+<!-- trindadeDev -->
 <script src="../../trindade/dev/js/oak/fetch/fetch.js"></script>
+<script src="../../trindade/dev/js/oak/theme/manager.js"></script>
 </html>

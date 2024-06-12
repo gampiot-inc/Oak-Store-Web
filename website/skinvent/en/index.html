@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="mdui-theme-dark" style="font-family: 'Gilroy-Regular', sans-serif;">
+<html  style="font-family: 'Gilroy-Regular', sans-serif;">
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,7 @@
         <mdui-dialog class="lang-dialog">
           <mdui-list>
             <mdui-list-subheader>Language</mdui-list-subheader>
-             <mdui-list-item onclick="window.open('../ar/index.html')" rounded style="margin-bottom: 6px;">Arabic</mdui-list-item>
+            <mdui-list-item onclick="window.open('../ar/index.html')" rounded style="margin-bottom: 6px;">Arabic</mdui-list-item>
             <mdui-list-item onclick="window.open('../en/index.html')" rounded active style="margin-bottom: 6px;">English</mdui-list-item>
             <mdui-list-item onclick="window.open('../fr/index.html')" rounded style="margin-bottom: 6px;">French</mdui-list-item>
             <mdui-list-item onclick="window.open('../pt-br/index.html')" rounded style="margin-bottom: 6px;">Portuguese</mdui-list-item>
@@ -66,16 +66,15 @@
   <h1>
     Oak: Strong apps for every branch of life
   </h1>
-  
-  <div  id="apps_container"></div>
-  
+
+  <div id="apps_container"></div>
+
 </body>
-<mdui-fab  icon="brightness_6"
-  id="themeToggleButton"
-  ></mdui-fab>
 <!-- trindadeDev -->
-<script src="../../trindade/dev/js/mdui/switch-theme.js"></script>
+<!-- trindadeDev MDUI -->
 <script src="../../trindade/dev/js/mdui/menu-item-language.js"></script>
 <script src="../../trindade/dev/js/mdui/menu-item.js"></script>
+<!-- trindadeDev Oak -->
 <script src="../../trindade/dev/js/oak/fetch/fetch.js"></script>
+<script src="../../trindade/dev/js/oak/theme/manager.js"></script>
 </html>
