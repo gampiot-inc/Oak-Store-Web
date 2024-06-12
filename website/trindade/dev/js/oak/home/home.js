@@ -1,4 +1,4 @@
-const baseUrl = "https://aquilestrindade.github.io/Oak-Web/trindade/dev/js/oak/details/details.html?id="
+const baseUrl = "https://aquilestrindade.github.io/Oak-Web/aglsk/pages/details.html?id="
 var appID = ""
 
 function detailsApp(id) {
