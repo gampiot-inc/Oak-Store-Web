@@ -1,4 +1,4 @@
-const username = "oak-store";
+const username = "aquilestrindade";
 const repo = "Oak-Web/";
 const usermod = "aglsk/";
 const baseUrl = "https://" + username + ".github.io/" + repo + usermod + "?id=";
