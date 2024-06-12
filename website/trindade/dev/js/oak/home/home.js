@@ -5,7 +5,7 @@ const baseUrl = "https://" + username + ".github.io/" + repo + usermod + "?id=";
 const url = './website/aglsk/?id=';
 
 function detailsApp(id) {
-  open(url + id);
+  open(baseUrl + id);
 }
 
 function open(uri) {
