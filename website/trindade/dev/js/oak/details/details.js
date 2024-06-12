@@ -1,3 +1,5 @@
+var downloadLink = ""
+
 async function fetchData() {
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get('id');
@@ -21,7 +23,7 @@ async function fetchData() {
       document.getElementById('number_of_downloads').textContent = data['number_of_downloads'];
       document.getElementById('app_logo').src = data['photo_app'];
       document.getElementById('dev_photo').src = data['dev_photo'];
-      document.getElementById('download_link').href = data['download_link'];
+      downloadLink = data['download_link'];
 
       const features = data['Funcionalidades'] ? data['Funcionalidades'].split(','): [];
       const featuresList = document.getElementById('app-features');
@@ -53,3 +55,9 @@ async function fetchData() {
     document.getElementById('app-detail').innerHTML = '<p>ID do aplicativo não fornecido na URL.</p>';
   }
 }
+
+function openDownloadLink () {
+  window.location.href = downloadLink
+}
+
+fetchData()

@@ -14,7 +14,8 @@ body {
 .app-description {
   margin: 16px 0;
 }
-#app_logo {
+.app_logo {
   max-width: 150px;
+  border-radius: 12px;
   max-height: 150px;
 }

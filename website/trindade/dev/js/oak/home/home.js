@@ -1,9 +1,8 @@
-const url = 'https://oak-store.github.io/Oak-Web/aglsk'
+
+const baseUrl = "https://aquilestrindade.github.io/Oak-Web/aglsk/pages/details.html?id="
+var appID = ""
 
 function detailsApp(id) {
-  open(url + `/?id=${id}`);
-}
-
-function open(uri) {
-  window.location.href = uri;
+  appID = id
+  window.location.href = baseUrl + appID
 }
