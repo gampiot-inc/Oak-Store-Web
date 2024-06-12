@@ -1,141 +1,178 @@
 <!DOCTYPE html>
-<html class="mdui-theme-primary-purple mdui-theme-accent-purple mdui-theme-dark" style="font-family: 'Gilroy-Regular', sans-serif;">
+<html lang="pt-br">
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oak Web</title>
-  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
-  <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
-  <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
-  <!-- Filled -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Outlined -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-  <!-- Rounded -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-  <!-- Sharp -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-  <!-- Two Tone -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
-  <!-- app styles -->
-  <link href="../css/styles.css" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/172158006?s=400&u=bd25903d55ecdd876355368dcc01d420ebd1ac2a&v=4" type="image/png">
-  <!-- trindadeDev-->
-  <link href="../../trindade/dev/css/mdui/styles.css" rel="stylesheet">
-  <link href="../../trindade/dev/css/oak/card-style.css" rel="stylesheet">
-  <style>
-    /* Estilos adicionais para os botões */
-    .icon-buttons {
-      display: flex;
-      gap: 10px;
-      position: absolute;
-      right: 16px;
-      top: 16px;
-    }
-    .icon-button {
-      cursor: pointer;
-    }
-
-    /* Estilizando a barra de rolagem */
-    ::-webkit-scrollbar {
-      width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #1e1e1e; /* Cor de fundo da barra de rolagem */
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: #6200ea; /* Cor do polegar da barra de rolagem */
-      border-radius: 20px;
-      border: 3px solid #1e1e1e; /* Espaço ao redor do polegar */
-    }
-
-    /* Estilos responsivos */
-    @media (max-width: 600px) {
-      .icon-buttons {
-        position: static;
-        justify-content: center;
-        margin-top: 10px;
-      }
-      .mdui-top-app-bar-title {
-        text-align: center;
-        font-size: 18px;
-      }
-      h1 {
-        font-size: 24px;
-        text-align: center;
-      }
-    }
-  </style>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Detalhes do App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gilroy', sans-serif;
+        }
+        .app-detail {
+            padding: 16px;
+        }
+        .app-header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .app-title {
+            margin: 8px 0;
+        }
+        .app-description {
+            margin: 16px 0;
+        }
+    </style>
 </head>
-<header>
-  <div id="google_translate_element" style="display: none;"></div>
-  <mdui-top-app-bar style="position: relative;">
-    <mdui-top-app-bar-title style="text-align: center; font-family: 'Gilroy-Bold', sans-serif;">Oak Store</mdui-top-app-bar-title>
-    <div style="flex-grow: 1"></div>
-    <!-- Botões de alternância de tema, GitHub e tradução -->
-    <div class="icon-buttons">
-      <mdui-button-icon class="icon-button" id="themeToggleButton" icon="brightness_6"></mdui-button-icon>
-      <mdui-button-icon class="icon-button" id="githubButton" icon="code"></mdui-button-icon>
-      <mdui-button-icon class="icon-button" id="devButton" icon="developer_mode"></mdui-button-icon>
-      <mdui-button-icon class="icon-button" id="translateButton" icon="translate"></mdui-button-icon>
+<body class="mdui-theme-layout-dark mdui-theme-primary-blue mdui-theme-accent-pink" onload="fetchData()">
+
+    <div class="mdui-container app-detail" id="app-detail">
+        <div class="app-header">
+            <img id="app-logo" src="https://via.placeholder.com/150" alt="App Logo" class="mdui-img-circle"/>
+            <h2 id="app-title" class="mdui-typo-display-1 mdui-text-color-theme app-title">Nome do App</h2>
+            <p id="app-developer" class="mdui-typo-subheading mdui-text-color-theme-secondary">Desenvolvedor do App</p>
+            <img id="dev-photo" src="https://via.placeholder.com/100" alt="Dev Photo" class="mdui-img-circle" style="width: 50px; height: 50px;">
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-category mdui-typo">
+            <h3 class="mdui-typo-title">Categoria</h3>
+            <p id="app-category"></p>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-description mdui-typo">
+            <h3 class="mdui-typo-title">Descrição</h3>
+            <p id="app-description"></p>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-comments mdui-typo">
+            <h3 class="mdui-typo-title">Comentários</h3>
+            <p id="app-comments"></p>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-features mdui-typo">
+            <h3 class="mdui-typo-title">Funcionalidades</h3>
+            <ul id="app-features" class="mdui-list">
+                <!-- Funcionalidades serão inseridas aqui -->
+            </ul>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-screenshots mdui-typo">
+            <h3 class="mdui-typo-title">Capturas de Tela</h3>
+            <div class="mdui-row" id="app-screenshots">
+                <!-- Capturas de tela serão inseridas aqui -->
+            </div>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-download mdui-typo">
+            <h3 class="mdui-typo-title">Link para Download</h3>
+            <a id="download-link" href="#" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">Baixar</a>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-actions mdui-typo" style="text-align: center; margin-top: 16px;">
+            <button class="mdui-btn mdui-btn-outlined mdui-ripple mdui-color-theme-accent">Compartilhar</button>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-status mdui-typo">
+            <h3 class="mdui-typo-title">Status</h3>
+            <p id="app-status"></p>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-tags mdui-typo">
+            <h3 class="mdui-typo-title">Tags</h3>
+            <p id="app-tags"></p>
+        </div>
+
+        <div class="mdui-divider"></div>
+
+        <div class="app-number-downloads mdui-typo">
+            <h3 class="mdui-typo-title">Número de Downloads</h3>
+            <p id="number-of-downloads"></p>
+        </div>
     </div>
-  </mdui-top-app-bar>
-</header>
 
-<body class="mdui-scrollbar">
-  <h1>Welcome to Oak Web</h1>
+    <script>
+        async function fetchData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (id) {
+                try {
+                    const response = await fetch(`https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec?id=${id}`);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
 
-  <div id="apps_container"></div>
+                    if (!data || Object.keys(data).length === 0) {
+                        throw new Error('No data found');
+                    }
 
-  <script>
-    // JavaScript para alternar o tema
-    const toggleButton = document.getElementById('themeToggleButton');
-    toggleButton.addEventListener('click', () => {
-      document.documentElement.classList.toggle('mdui-theme-dark');
-    });
+                    document.getElementById('app-title').textContent = data['name_app'];
+                    document.getElementById('app-developer').textContent = data['dev_name'];
+                    document.getElementById('app-description').textContent = data['description'];
+                    document.getElementById('app-comments').textContent = data['app_comments'];
+                    document.getElementById('app-category').textContent = data['category'];
+                    document.getElementById('app-status').textContent = data['status'];
+                    document.getElementById('app-tags').textContent = data['tag'];
+                    document.getElementById('number-of-downloads').textContent = data['number_of_downloads'];
+                    document.getElementById('app-logo').src = data['photo_app'];
+                    document.getElementById('dev-photo').src = data['dev_photo'];
+                    document.getElementById('download-link').href = data['download_link'];
 
-    // JavaScript para abrir o repositório GitHub
-    const githubButton = document.getElementById('githubButton');
-    githubButton.addEventListener('click', () => {
-      window.open('https://github.com/Oak-Store/Oak-Web', '_blank');
-    });
+                    const features = data['Funcionalidades'] ? data['Funcionalidades'].split(',') : [];
+                    const featuresList = document.getElementById('app-features');
+                    featuresList.innerHTML = '';
+                    features.forEach(feature => {
+                        const li = document.createElement('li');
+                        li.className = 'mdui-list-item mdui-ripple';
+                        li.textContent = feature.trim();
+                        featuresList.appendChild(li);
+                    });
 
-    // JavaScript para abrir a página de desenvolvedores
-    const devButton = document.getElementById('devButton');
-    devButton.addEventListener('click', () => {
-      window.open('https://github.com/Oak-Store', '_blank'); // Atualize a URL para a página de desenvolvedores específica, se houver.
-    });
-
-    // JavaScript para inicializar o Google Translate
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    }
-
-    // JavaScript para abrir o tradutor dentro da página e traduzir para português
-    const translateButton = document.getElementById('translateButton');
-    translateButton.addEventListener('click', () => {
-      const translateElement = document.getElementById('google_translate_element');
-      if (translateElement.style.display === 'none') {
-        translateElement.style.display = 'block';
-        setTimeout(() => {
-          document.querySelector('.goog-te-combo').value = 'pt';
-          document.querySelector('.goog-te-combo').dispatchEvent(new Event('change'));
-        }, 100);
-      } else {
-        translateElement.style.display = 'none';
-      }
-    });
-  </script>
+                    const screenshots = data['Capturas de Tela'] ? data['Capturas de Tela'].split(',') : [];
+                    const screenshotsDiv = document.getElementById('app-screenshots');
+                    screenshotsDiv.innerHTML = '';
+                    screenshots.forEach(screenshot => {
+                        const div = document.createElement('div');
+                        div.className = 'mdui-col-xs-4';
+                        const img = document.createElement('img');
+                        img.src = screenshot.trim();
+                        img.className = 'mdui-img-fluid';
+                        div.appendChild(img);
+                        screenshotsDiv.appendChild(div);
+                    });
+                } catch (error) {
+                    console.error('Fetch error: ', error);
+                    document.getElementById('app-detail').innerHTML = `<p>Erro ao carregar os dados: ${error.message}</p>`;
+                }
+            } else {
+                document.getElementById('app-detail').innerHTML = '<p>ID do aplicativo não fornecido na URL.</p>';
+            }
+        }
+    </script>
 </body>
-  <!-- trindadeDev -->
-  <!-- trindadeDev MDUI -->
-<script src="../website/trindade/dev/js/mdui/menu-item-language.js"></script>
-<script src="../website/trindade/dev/js/mdui/menu-item.js"></script>
-<!-- trindadeDev Oak -->
-<script src="./website/trindade/dev/js/oak/fetch/fetch.js"></script>
-<script src="./website/trindade/dev/js/oak/theme/manager.js"></script>
 </html>
