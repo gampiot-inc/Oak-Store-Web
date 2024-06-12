@@ -15,17 +15,17 @@ async function fetchData() {
         throw new Error('No data found');
       }
 
-      document.getElementById('app_title').textContent = data['name_app'];
-      document.getElementById('app_developer').textContent = data['dev_name'];
-      document.getElementById('app_description').textContent = data['description'];
+      document.getElementById('app_title').textContent = data['project_name'];
+      document.getElementById('app_developer').textContent = data['project_dev_name'];
+      document.getElementById('app_description').textContent = data['project_description'];
       document.getElementById('app_category').textContent = data['category'];
-      document.getElementById('app_tags').textContent = data['tag'];
-      document.getElementById('number_of_downloads').textContent = data['number_of_downloads'];
-      document.getElementById('app_logo').src = data['photo_app'];
-      document.getElementById('dev_photo').src = data['dev_photo'];
-      downloadLink = data['download_link'];
+      document.getElementById('app_tags').textContent = data['project_tag'];
+      document.getElementById('number_of_downloads').textContent = data['project_download_count'];
+      document.getElementById('app_logo').src = data['project_photo'];
+      document.getElementById('dev_photo').src = data['project_dev_photo'];
+      downloadLink = data['project_download_url'];
 
-      const features = data['Funcionalidades'] ? data['Funcionalidades'].split(','): [];
+      const features = data['project_functions'] ? data['project_functions'].split(','): [];
       const featuresList = document.getElementById('app-features');
       featuresList.innerHTML = '';
       features.forEach(feature => {
@@ -35,7 +35,7 @@ async function fetchData() {
         featuresList.appendChild(li);
       });
 
-      const screenshots = data['Capturas de Tela'] ? data['Capturas de Tela'].split(','): [];
+      const screenshots = data['project_screenshots'] ? data['project_screenshots'].split(','): [];
       const screenshotsDiv = document.getElementById('app-screenshots');
       screenshotsDiv.innerHTML = '';
       screenshots.forEach(screenshot => {
