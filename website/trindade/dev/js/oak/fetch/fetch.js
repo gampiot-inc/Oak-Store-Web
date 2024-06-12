@@ -1,4 +1,4 @@
-const API_URL = "https://raw.githubusercontent.com/Oak-Store/Oak-Android/main/test/database/database.json";
+const API_URL = "https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec";
 const appsContainer = document.querySelector("#apps_container");
 
 fetch(API_URL)
