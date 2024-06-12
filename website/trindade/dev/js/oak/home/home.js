@@ -1,9 +1,7 @@
-
-const baseUrl = "https://aquilestrindade.github.io/Oak-Web/trindade/dev/js/oak/details/?id="
-const appID = ""
+const baseUrl = "https://aquilestrindade.github.io/Oak-Web/trindade/dev/js/oak/details/details.html?id="
+var appID = ""
 
 function detailsApp(id) {
-   appID = id
-   localStorage.setItem("appID", appID);
-   window.location.href = baseUrl + appID
+  appID = id
+  window.location.href = baseUrl + appID
 }
