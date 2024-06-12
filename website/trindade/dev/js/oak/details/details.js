@@ -60,3 +60,4 @@ async function fetchData() {
 function openDownloadLink () {
   window.location.href = downloadLink
 }
+fetchData()
