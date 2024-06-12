@@ -1,5 +1,5 @@
 
-const baseUrl = "https://aquilestrindade.github.io/Oak-Web/aglsk/pages/details.html?id="
+const baseUrl = "https://oak-store.github.io/Oak-Web/aglsk/pages/details.html?id="
 var appID = ""
 
 function detailsApp(id) {
