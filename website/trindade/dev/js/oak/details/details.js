@@ -7,7 +7,7 @@ async function fetchData() {
   if (project_name) {
     if (project_dev_name) {
       try {
-        const response = await fetch(`https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec?project_name=${project_name}&project_dev_name=${project_dev_name}`);
+        const response = await fetch(`https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec?project_dev_name=${project_dev_name}&project_name=${project_name}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
