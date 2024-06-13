@@ -3,5 +3,5 @@ var appID = ""
 
 function detailsApp(pName, dName) {
   appID = id
-  window.location.href = baseUrl + pName + "/?project_dev_name=" + dName
+  window.location.href = baseUrl + pName + "&project_dev_name=" + dName
 }
