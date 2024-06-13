@@ -11,18 +11,19 @@ async function fetchData() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
+        console.log(data)
 
         if (!data || Object.keys(data).length === 0) {
           throw new Error('No data found');
         }
 
-        document.getElementById('app_title').textContent = data['project_name'];
+        document.getElementById('app_title').textContent = data['project_name_app'];
         document.getElementById('app_developer').textContent = data['project_dev_name'];
         document.getElementById('app_description').textContent = data['project_description'];
         document.getElementById('app_category').textContent = data['category'];
         document.getElementById('app_tags').textContent = data['project_tag'];
         document.getElementById('number_of_downloads').textContent = data['project_download_count'];
-        document.getElementById('app_logo').src = data['project_photo'];
+        document.getElementById('app_logo').src = data['project_photo_app'];
         document.getElementById('dev_photo').src = data['project_dev_photo'];
         DOWNLOAD_URL = data['project_download_url'];
 

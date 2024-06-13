@@ -10,7 +10,8 @@ fetch(API_URL)
 })
 .then(data => {
   data.forEach(data => {
-    const html = appItem(data.project_name, data.project_dev_name, data.project_photo, data.project_id);
+    console.log(data)
+    const html = appItem(data.project_name_app, data.project_dev_name, data.project_photo_app, data.project_id);
     appsContainer.appendChild(html);
   });
 })
