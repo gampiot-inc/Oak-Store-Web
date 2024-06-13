@@ -4,8 +4,7 @@ async function fetchData() {
   const urlParams = new URLSearchParams(window.location.search);
   const project_name = urlParams.get('project_name');
   const project_dev_name = urlParams.get('project_dev_name');
-  if (project_name) {
-    if (project_dev_name) {
+  if (project_dev_name && project_name ) {
       try {
         const response = await fetch(`https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec?project_dev_name=${project_dev_name}&project_name=${project_name}`);
         if (!response.ok) {
@@ -53,9 +52,6 @@ async function fetchData() {
         console.error('Fetch error: ', error);
         document.getElementById('app-detail').innerHTML = `<p>Erro ao carregar os dados: ${error.message}</p>`;
       }
-    } else {
-      document.getElementById('app-detail').innerHTML = '<p>Desenvolvedor do aplicativo não fornecido na URL.</p>';
-    }
   } else {
     document.getElementById('app-detail').innerHTML = '<p>Nome do aplicativo não fornecido na URL.</p>';
   }
