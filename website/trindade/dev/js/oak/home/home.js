@@ -1,4 +1,3 @@
-
 const baseUrl = "https://oak-store.github.io/Oak-Web/aglsk/pages/details/?project_name="
 var appID = ""
 
