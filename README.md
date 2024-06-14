@@ -12,7 +12,6 @@
 
 - [Aquiles Trindade](https://github.com/aquilesTrindade)
 - [Agel SK](https://github.com/aglsk)
-- [Suay Dev](https://github.com/devsuay)
 - And you soon!
 
 # Oak Projects
