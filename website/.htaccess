@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteBase /Oak-Web/
+RewriteRule ^aglsk/pages/details/([^/]+)/([^/]+)/?$ aglsk/pages/details/index.html [L,QSA]

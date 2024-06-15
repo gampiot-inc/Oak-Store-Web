@@ -3,7 +3,6 @@ name: Oak Web CI
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 permissions:
@@ -27,32 +26,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
+
       - name: Create env.js
         run: echo "$WEB_ENV_FILE" > website/trindade/dev/js/oak/fetch/env.js
-          
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './website/'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
-      - name: send telegram message on push
+
+      - name: Send Telegram message on push
+        if: github.event_name == 'push'
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN_WEB }}
           message: |
-            Atualização na  *Oak Store Web!*
+            Atualização na *Oak Store Web!*
             Repository: *${{ github.repository }}*
             Acesse agora:
-            oak-store.github.io/Oak-Web/
-            
+            [oak-store.github.io/Oak-Web/](https://oak-store.github.io/Oak-Web/)
+
       - name: Send APK to Sketchware Pro Group Telegram
+        if: github.event_name == 'push'
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO_PROGBRS }}
@@ -61,7 +64,7 @@ jobs:
           document: store/build/outputs/apk/debug/store-debug.apk
           disable_web_page_preview: false
           message: |
-            Atualização na  *Oak Store Web!*
+            Atualização na *Oak Store Web!*
             Repository: *${{ github.repository }}*
             Acesse agora:
-            oak-store.github.io/Oak-Web/
+            [oak-store.github.io/Oak-Web/](https://oak-store.github.io/Oak-Web/)
