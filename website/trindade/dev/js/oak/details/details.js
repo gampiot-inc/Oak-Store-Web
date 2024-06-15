@@ -2,8 +2,9 @@ var DOWNLOAD_URL = ""
 
 async function fetchData() {
   const params = window.location.hash.substring(2).split('/')
-  const project_name = params[0]
-  const project_dev_name = params[1]
+  const project_name = params[1]
+  const project_dev_name = params[0]
+
   if (project_dev_name && project_name ) {
       try {
         const response = await fetch(`https://script.google.com/macros/s/AKfycbzY10nMRy1XdLxIsQzj4MqzLc1MMG4P0UXlG7T0dHYmhE3Ts2c05B6Ghw6yMgb33yeV/exec?project_dev_name=${project_dev_name}&project_name=${project_name}`);
