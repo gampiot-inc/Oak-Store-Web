@@ -7,7 +7,7 @@ async function fetchData() {
 
   if (project_dev_name && project_name ) {
       try {
-        const response = await fetch(`https://oak-api-alpha.vercel.app/${project_dev_name}/${project_name}`);
+        const response = await fetch(`https://oak-api-alpha.vercel.app/app/${project_dev_name}/${project_name}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
