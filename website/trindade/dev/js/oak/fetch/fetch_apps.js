@@ -11,7 +11,7 @@ fetch(API_URL)
 .then(data => {
   data.forEach(data => {
     console.log(data)
-    const html = appItem(data.app_name, data.app_dev_name, data.app_photp, data.app_id);
+    const html = appItem(data.app_name, data.app_dev_name, data.app_photo, data.app_id);
     appsContainer.appendChild(html);
   });
 })
@@ -26,7 +26,7 @@ function appItem(appname, dev, photo, id) {
   div.classList.add('list-item',
     'mdui-list-item');
   div.addEventListener('click',
-    () => detailsApp(appname, dev)); // Adiciona o evento de clique de forma segura
+    () => detailsApp(appname, dev));
 
   const img = document.createElement('img');
   img.width = 20;
