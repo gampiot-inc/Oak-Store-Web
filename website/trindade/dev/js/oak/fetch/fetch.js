@@ -1,4 +1,4 @@
-const API_URL = "https://oak-api-alpha.vercel.app";
+const API_URL = "https://oak-api-alpha.vercel.app/apps/";
 const appsContainer = document.querySelector("#apps_container");
 
 fetch(API_URL)
