@@ -11,7 +11,7 @@ fetch(API_URL)
 .then(data => {
   data.forEach(data => {
     console.log(data)
-    const html = appItem(data.project_name_app, data.project_dev_name, data.project_photo_app, data.project_id);
+    const html = appItem(data.app_name, data.app_dev_name, data.app_photp, data.app_id);
     appsContainer.appendChild(html);
   });
 })
