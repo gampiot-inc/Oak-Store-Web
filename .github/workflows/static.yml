@@ -50,7 +50,7 @@ jobs:
             Atualização na  *Oak Store Web!*
             Repository: *${{ github.repository }}*
             Acesse agora:
-            oak-store.github.io/Oak-Web/
+            oak-store.github.io/web/
             
       - name: Send APK to Sketchware Pro Group Telegram
         uses: appleboy/telegram-action@master
@@ -64,4 +64,4 @@ jobs:
             Atualização na  *Oak Store Web!*
             Repository: *${{ github.repository }}*
             Acesse agora:
-            oak-store.github.io/Oak-Web/
+            oak-store.github.io/web/
