@@ -82,7 +82,20 @@
     <hr class="mdui-divider">
   </div>
 
+  <script>
+    // Espera até que o DOM esteja completamente carregado
+    document.addEventListener('DOMContentLoaded', function() {
+      // Acessa os elementos e define seus conteúdos
+      document.getElementById('app_title').innerHTML = 'Nome do App';
+      document.getElementById('app_description').innerHTML = 'Descrição detalhada do aplicativo...';
+      document.getElementById('app_category').innerHTML = 'Categoria do App';
+      document.getElementById('app_tags').innerHTML = 'Tag1, Tag2, Tag3';
+      document.getElementById('number_of_downloads').innerHTML = '1.000.000+ downloads';
+      document.getElementById('app_developer').innerHTML = 'Desenvolvedor do App';
+    });
+  </script>
+
   <script src="../../.././trindade/dev/js/oak/details/details.js"></script>
   <script src="../../.././trindade/dev/js/oak/theme/manager.js"></script>
 </body>
-  </html>
+</html>
