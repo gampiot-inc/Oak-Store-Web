@@ -107,16 +107,18 @@
             throw new Error('No data found');
           }
 
-          document.getElementById('app_title').textContent = data['app_name'];
-          document.getElementById('app_developer').textContent = data['app_dev_name'];
-          document.getElementById('app_description').textContent = data['app_description'];
-          document.getElementById('app_category').textContent = data['app_category'];
-          document.getElementById('app_tags').textContent = data['app_tags'];
-          document.getElementById('number_of_downloads').textContent = data['app_downloads'];
-          document.getElementById('app_logo').src = data['app_photo'];
-          document.getElementById('dev_photo').src = data['app_dev_photo'];
-          DOWNLOAD_URL = data['app_download_url'];
+          // Atualiza os elementos HTML com os dados do aplicativo
+          document.getElementById('app_title').textContent = data['app_name'] || '';
+          document.getElementById('app_developer').textContent = data['app_dev_name'] || '';
+          document.getElementById('app_description').textContent = data['app_description'] || '';
+          document.getElementById('app_category').textContent = data['app_category'] || '';
+          document.getElementById('app_tags').textContent = data['app_tags'] || '';
+          document.getElementById('number_of_downloads').textContent = data['app_downloads'] || '';
+          document.getElementById('app_logo').src = data['app_photo'] || 'https://via.placeholder.com/150';
+          document.getElementById('dev_photo').src = data['app_dev_photo'] || 'https://via.placeholder.com/100';
+          DOWNLOAD_URL = data['app_download_url'] || '';
 
+          // Preenche a lista de funcionalidades
           const features = data['app_functions'] ? data['app_functions'].split(',') : [];
           const featuresList = document.getElementById('app_features');
           featuresList.innerHTML = '';
@@ -127,6 +129,7 @@
             featuresList.appendChild(li);
           });
 
+          // Adiciona as capturas de tela
           const screenshots = data['app_screenshots'] ? data['app_screenshots'].split(',') : [];
           const screenshotsDiv = document.getElementById('app_screenshots');
           screenshotsDiv.innerHTML = '';
